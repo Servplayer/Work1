@@ -17,7 +17,7 @@ namespace Work1
             Console.WriteLine("Введите максимальное значение х");
             max = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите шаг");
-            ch = Convert.ToInt32(Console.ReadLine());
+            ch = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("y = x^2");
             while(x<=max){
                 y=Math.Pow(x,2);
@@ -31,15 +31,16 @@ namespace Work1
             while(x<=max)
             {
                 //y = (Math.Pow((Math.Sin(x)), 3)+45+3*x)/(2*Math.Pow(x,4)+4*3*x); //func of 20
-                y=Math.Sqrt((Math.Pow(3*x,2)+x/(3*x))/(16*3*x*x));//var 26
+                //y=Math.Sqrt((Math.Pow(3*x,2)+x/(3*x))/(16*3*x*x));//var 26)
+                y=Math.Sin(x - Math.Pow(3*x,3)+Math.Sqrt(x))-1.3*Math.Pow(x,3);//var27
                 Console.WriteLine("y = " + y);
-                sum = y + sum;
+                sum = Math.Sin(y) + sum;
                 dob = dob * y;
                 x = x + ch;
                 y = 0;
             }
 
-            Console.WriteLine("Сумма промежуточных у = " + sum);
+            Console.WriteLine("Сумма синусов промежуточных значений f(x) = " + sum);
             Console.ReadKey();
         }
     }
